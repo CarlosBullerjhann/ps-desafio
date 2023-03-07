@@ -5,10 +5,22 @@
         </a>
     </div>
     <div id="header-busca">
+        <div>
+            <a href="">
+                home
+            </a>
+        </div>
+        <div>
+            <a href="">
+                contato
+            </a>
+        </div>
         <form class="search" action="">
             <input type="text">
             <button type="submit">
-                <span class="material-symbols-outlined">search</span>
+                <span class="material-symbols-outlined">
+                    search
+                </span>
             </button>
         </form>
     </div>
