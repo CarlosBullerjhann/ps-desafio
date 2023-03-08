@@ -12,8 +12,20 @@ class SiteController extends Controller
 {
     public function index()
     {
-        $produto = Produto::all();
-        $categoria = Categoria::all();
-        return view('site.index', compact('produto', 'categoria'));
+        $produtos = Produto::all();
+        $categorias = Categoria::all();
+        return view('site.index', compact('produtos', 'categorias'));
+    }
+
+    public function produtoFilter(Request $request)
+    {
+        $categoriaSelect = Categoria::where('categoria', $request['categorias'])->first();
+        $produtos = [];
+        if (isset($categoriaSelect))
+            $produtos = Produto::where('categoria_id', $categoriaSelect->id)->get();
+        else
+            $produtos = Produto::all();
+        $categorias = Categoria::all();
+        return view('site.index', compact('produtos', 'categorias', 'categoriaSelect'));
     }
 }

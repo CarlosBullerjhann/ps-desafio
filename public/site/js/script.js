@@ -1,3 +1,3 @@
 function openPage(link) {
-    window.open(link, "blak").focus();
+    window.open(link, "blank").focus();
 }

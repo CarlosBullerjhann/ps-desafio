@@ -12,7 +12,7 @@
         </div>
         <div>
             <a href="">
-                contato
+                contatos
             </a>
         </div>
         <form class="search" action="">
@@ -25,3 +25,4 @@
         </form>
     </div>
 </header>
+<hr>

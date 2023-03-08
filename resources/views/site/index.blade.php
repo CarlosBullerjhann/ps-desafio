@@ -5,7 +5,45 @@
 @endsection
 
 @section('conteudo')
-    <div class="teste">
-        a<br>b<br>c<br>d<br>e<br>f<br>g<br>h<br>i<br>j<br>k<br>l<br>m<br>n<br>o<br>p<br>q<br>r<br>s<br>t<br>u<br>v<br>w<br>x<br>y<br>z<br>aa<br>ab<br>ac<br>ad<br>ae<br>af<br>ag<br>ah<br>ai<br>aj<br>ak<br>al<br>am<br>an<br>ao<br>ap<br>aq<br>ar<br>as<br>at<br>au<br>av<br>aw<br>ax<br>ay<br>az
+    <div id="conteudo-container">
+        <div id="filtro-categorias">
+            <form class="select" action="">
+                <div id="select-container">
+                    <label for="categorias">Filtrar por categorias:</label>
+                    <select name="categorias" id="categorias">
+                        <option class="selecione" value="default">selecione uma categoria</option>
+                        <option value="">Mostrar todas</option>
+                        @foreach ($categorias as $categoria)
+                            <option value="{{ $categoria['categoria'] }}">{{ $categoria['categoria'] }} </option>
+                        @endforeach
+                    </select>
+                    <input type="submit" value="Filtrar">
+                </div>
+            </form>
+        </div>
+        <div class="produtos">
+            @isset($produtos)
+                @if (count($produtos))
+                    @foreach ($produtos as $produto)
+                        <div class="each-produto">
+                            <div class="nome-produto">
+                                <p>nome:{{ $produto['nome'] }}</p>
+                            </div>
+                            <div class="image-container">
+                                <img src="{{ $produto['imagem'] }}" alt="">
+                            </div>
+                            <div class="info-produto">
+                                <!--<p>{{ $produto['descricao'] }}</p>-->
+                                <p>categoria:{{ $produto->categoria->categoria }}</p>
+                                <p>valor:{{ $produto['preco'] }}</p>
+                                <!--<p>{{ $produto['quantidade'] }}</p>-->
+                            </div>
+                        </div>
+                    @endforeach
+                @else
+                    <p>Sem produtos no momento</p>
+                @endif
+            @endisset
+        </div>
     </div>
 @endsection

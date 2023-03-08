@@ -21,7 +21,7 @@
 
     @include('layouts.site.footer')
 
-    <script src="{{ 'site/js/script.js' }}"></script>
+    <script src="{{ asset('site/js/script.js') }}"></script>
 </body>
 
 </html>
