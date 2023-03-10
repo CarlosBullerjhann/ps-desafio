@@ -28,4 +28,16 @@ class SiteController extends Controller
         $categorias = Categoria::all();
         return view('site.index', compact('produtos', 'categorias', 'categoriaSelect'));
     }
+
+    public function produtoFind(Request $request)
+    {
+        $produtos = Produto::where('nome', 'LIKE', "%{$request['search']}%")->get();
+        $categorias = Categoria::all();
+        return view('site.index', compact('produtos', 'categorias'));
+    }
+
+    public function compra()
+    {
+        return view('site.compra');
+    }
 }

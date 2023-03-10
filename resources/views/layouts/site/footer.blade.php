@@ -13,7 +13,7 @@
                 onclick="openPage('http://www.facebook.com')">
         </div>
         <div id="texto-footer">
-            Carlos Alberto B Milbratz 2023, todos od direitos reservados.
+            Carlos Alberto B Milbratz 2023, todos os direitos reservados.
         </div>
     </div>
 </footer>

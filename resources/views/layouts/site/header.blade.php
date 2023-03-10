@@ -6,17 +6,17 @@
     </div>
     <div id="header-busca">
         <div>
-            <a href="">
+            <a class="btn-header" href="{{ route('siteIndex') }}">
                 home
             </a>
         </div>
         <div>
-            <a href="">
+            <button class="btn-header" onclick="scrooll('site-footer')">
                 contatos
-            </a>
+            </button>
         </div>
-        <form class="search" action="">
-            <input type="text">
+        <form class="search" action="{{ route('siteFind') }}">
+            <input type="text" id="search" name="search">
             <button type="submit">
                 <span class="material-symbols-outlined">
                     search
