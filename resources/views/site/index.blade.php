@@ -25,11 +25,12 @@
             @isset($produtos)
                 @if (count($produtos))
                     @foreach ($produtos as $produto)
-                        <div class="each-produto-container">
-                            <div class="each-produto">
+                        <div class="{{ $produto['quantidade'] <= 0 ? 'each-produto-container0' : 'each-produto-container' }}">
+                            <div class="each-produto" id="produto-{{ $produto['id'] }}"
+                                onclick="opendiv('produto-{{ $produto['id'] }}','info-{{ $produto['id'] }}')">
                                 <div class="info">
                                     <div class="nome-produto">
-                                        <p id="nome">{{ $produto['nome'] }}</p>
+                                        <p class="titulo nome">{{ $produto['nome'] }}</p>
                                     </div>
                                     <div class="image-container">
                                         <img src="{{ $produto['imagem'] }}" alt="">
@@ -39,8 +40,22 @@
                                         <p>R${{ $produto['preco'] }}</p>
                                     </div>
                                 </div>
+                                <div class="info-2" id="info-{{ $produto['id'] }}">
+                                    <div class="titulo">
+                                        <p>descrição</p>
+                                        <p id="descricao">{{ $produto['descricao'] }}</p>
+                                    </div>
+                                    <div class="titulo">
+                                        <p>quantidade</p>
+                                        <p id="quantidade">{{ $produto['quantidade'] }}</p>
+                                    </div>
+                                </div>
                             </div>
-                            <button class="btn-compra">comprar</button>
+                            <a class="btn-compra" href="{{ route('compra', $produto->id) }}">
+                                <button class="btn-compra">
+                                    Compra
+                                </button>
+                            </a>
                         </div>
                     @endforeach
                 @else

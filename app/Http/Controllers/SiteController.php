@@ -36,8 +36,23 @@ class SiteController extends Controller
         return view('site.index', compact('produtos', 'categorias'));
     }
 
-    public function compra()
+    public function compra($id)
     {
-        return view('site.compra');
+        $produto = Produto::find($id);
+        return view('site.compra', compact('produto'));
+    }
+
+    public function comprar(Request $request, $id)
+    {
+        $produto = Produto::find($id);
+        $quantidade = $request->quantidade;
+
+        if ($produto->quantidade > $quantidade) {
+            $produto->quantidade -= $quantidade;
+            $produto->save();
+            return redirect()->back()->with('success', 'Produto comprado com sucesso!');
+        } else {
+            return redirect()->back()->with('error', 'Produto não encontrado.');
+        }
     }
 }

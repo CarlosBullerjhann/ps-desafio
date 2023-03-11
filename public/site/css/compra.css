@@ -1,0 +1,86 @@
+#container-compra {
+    padding: 20px 20px 20px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.container-info {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 50px 20px;
+}
+
+.imagem-compra {
+    background-color: #cecece;
+    width: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.imagem-compra div {
+    width: 250px;
+    height: 250px;
+}
+
+.info-site-compra {
+    background-color: #cecece;
+    width: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 1px solid black;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.info-site-compra p {
+    padding: 20px;
+}
+
+#comprar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#quantidade-compra button {
+    background-color: #fff93c;
+    width: 30px;
+    height: 30px;
+}
+
+#quantidade-compra button:hover {
+    background-color: #c2bd2d;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+#quantidade-compra input {
+    display: inline-block;
+    background-color: #cecece;
+    height: 30px;
+    padding: 0 10px;
+}
+
+#btn-1 {
+    display: inline-block;
+    border-radius: 20px 0px 0px 20px;
+    padding: 0 10px;
+}
+
+#btn-2 {
+    display: inline-block;
+    border-radius: 0px 20px 20px 0px;
+    padding: 0 10px;
+}

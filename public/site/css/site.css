@@ -19,6 +19,7 @@ body {
 
 /*CSS Header*/
 hr {
+    margin-top: 80px;
     width: 100%;
     height: 5px;
     background: rgb(26, 90, 173);
@@ -34,7 +35,7 @@ hr {
     height: 80px;
 
     background-color: #1a5aad;
-    position: sticky;
+    position: fixed;
 
     top: 0;
     left: 0;
@@ -186,6 +187,7 @@ hr {
     width: 380px;
     padding: 5px 5px 5px 5px;
 }
+
 #select-container input {
     background-color: #ffffff;
     border: 1px solid #000000;
@@ -237,11 +239,10 @@ hr {
     width: 300px;
     background-color: #ffffff;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     border-bottom: 2px solid #e4e4e4;
-    border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 0px 0px;
     z-index: 1;
 }
 
@@ -250,6 +251,15 @@ hr {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+}
+
+.info-2 {
+    display: none;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 40px;
+    width: 200px;
+    height: 350px;
 }
 
 #nome {
@@ -340,40 +350,40 @@ hr {
     padding: 20px;
 }
 
-#comprar {
+.comprar {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
 
-#quantidade-compra button {
+.quantidade-compra button {
     background-color: #fff93c;
     width: 30px;
     height: 30px;
 }
 
-#quantidade-compra button:hover {
+.quantidade-compra button:hover {
     background-color: #c2bd2d;
     width: 30px;
     height: 30px;
     cursor: pointer;
 }
 
-#quantidade-compra input {
+.quantidade-compra input {
     display: inline-block;
     background-color: #cecece;
     height: 30px;
     padding: 0 10px;
 }
 
-#btn-1 {
+.btn-1 {
     display: inline-block;
     border-radius: 20px 0px 0px 20px;
     padding: 0 10px;
 }
 
-#btn-2 {
+.btn-2 {
     display: inline-block;
     border-radius: 0px 20px 20px 0px;
     padding: 0 10px;

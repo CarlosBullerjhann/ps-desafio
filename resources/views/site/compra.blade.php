@@ -6,16 +6,16 @@
 
 @section('conteudo')
     <div id="container-compra">
-        <div>nome</div>
+        <div>nome</div>{{-- {{ $produto['nome'] }} --}}
         <div class="container-info">
             <div class="imagem-compra">
-                <div></div>
+                <div></div>{{-- {{ $produto['imagem'] }} --}}
             </div>
             <div class="info-site-compra">
-                <p>descrição</p>
-                <p>categoria</p>
-                <p>quantidade</p>
-                <p>preço</p>
+                <p>descrição</p>{{-- {{ $produto['descricao'] }} --}}
+                <p>categoria</p>{{-- {{ $produto->categoria->categoria }} --}}
+                <p>quantidade</p>{{-- {{ $produto['quantidade'] }} --}}
+                <p>preço</p>{{-- R${{ $produto['preco'] }} --}}
             </div>
         </div>
         <div id="comprar">
