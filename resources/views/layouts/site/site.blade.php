@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="{{ 'site/css/site.css' }}">
+    <link href="{{ asset('site/css/site.css') }}" rel="stylesheet">
 </head>
 
 <body>

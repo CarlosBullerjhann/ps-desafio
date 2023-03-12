@@ -6,14 +6,14 @@ function scrooll(id) {
     document.getElementById(id).scrollIntoView();
 }
 
-function opendiv(produto_id, info_id) {
-    var produto = document.getElementById(produto_id);
-    var info = document.getElementById(info_id);
-    if (info.style.display == "none") {
-        produto.style.width = "550px";
-        info.style.display = "flex";
+function opendiv(produto1_id, produto2_id) {
+    var produto1 = document.getElementById(produto1_id);
+    var produto2 = document.getElementById(produto2_id);
+    if (produto2.style.display == "none") {
+        produto1.style.display = "none";
+        produto2.style.display = "flex";
     } else {
-        produto.style.width = "300px";
-        info.style.display = "none";
+        produto1.style.display = "flex";
+        produto2.style.display = "none";
     }
 }

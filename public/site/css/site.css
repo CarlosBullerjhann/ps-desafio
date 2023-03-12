@@ -31,7 +31,7 @@ hr {
 }
 
 #site-header {
-    width: 100%;
+    width: 100vw;
     height: 80px;
 
     background-color: #1a5aad;
@@ -179,12 +179,12 @@ hr {
 
 /*Conteudo*/
 #conteudo-container {
-    padding: 15px 40px 20px 40px;
+    padding: 15px 0px 20px 0px;
     background-color: #ffffff;
 }
 
 #select-container {
-    width: 380px;
+    width: 320px;
     padding: 5px 5px 5px 5px;
 }
 
@@ -217,6 +217,7 @@ hr {
     align-items: flex-start;
     justify-content: space-around;
     flex-wrap: wrap;
+    margin: 0px 20px 0 15px;
 }
 
 .each-produto-container {
@@ -224,7 +225,6 @@ hr {
     margin-bottom: 40px;
     box-shadow: 5px 5px 15px 3px #0000002f;
     border-radius: 20px;
-    z-index: 2;
 }
 
 .each-info-produto {
@@ -232,7 +232,6 @@ hr {
     width: 300px;
     height: 0;
     top: 100px;
-    z-index: 0;
 }
 
 .each-produto {
@@ -243,7 +242,16 @@ hr {
     justify-content: center;
     border-bottom: 2px solid #e4e4e4;
     border-radius: 10px 10px 0px 0px;
-    z-index: 1;
+}
+
+.each-produto2 {
+    width: 550px;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid #e4e4e4;
+    border-radius: 10px 10px 0px 0px;
 }
 
 .info {
@@ -252,14 +260,19 @@ hr {
     justify-content: center;
     flex-direction: column;
 }
-
-.info-2 {
-    display: none;
+.info1 {
+    display: flex;
+    align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin-left: 40px;
+}
+
+.info-2 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 20px;
     width: 200px;
-    height: 350px;
 }
 
 #nome {
@@ -290,14 +303,56 @@ hr {
     background-color: #2973d3;
 }
 
-.image-container img {
+#img1 {
     width: 250px;
     height: 250px;
     object-fit: scale-down;
 }
 
+#img2 {
+    width: 250px;
+    height: 250px;
+    margin-left: 20px;
+    object-fit: scale-down;
+}
+
 .nome-produto {
     padding-top: 30px;
+}
+
+@media screen and (max-width: 600px) {
+    #redes-sociais {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #header-busca div {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .each-produto2 {
+        width: 81vw;
+        min-width: 300px;
+    }
+
+    #img2 {
+        margin-left: 20px;
+        height: auto;
+        width: 37vw;
+        min-width: 150px;
+    }
+
+    .info1 {
+        width: 35vw;
+        margin-left: 30px;
+    }
+
+    .info-2 {
+        margin-left: 35px;
+        margin-right: 15px;
+    }
 }
 
 /*conteudo site compra*/
@@ -328,10 +383,16 @@ hr {
     border-radius: 20px;
 }
 
-.imagem-compra div {
-    width: 250px;
-    height: 250px;
-    background-color: aqua;
+.imagem-compra {
+    width: 44vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.imagem-compra img {
+    width: 35vw;
+    height: auto;
+    object-fit: scale-down;
 }
 
 .info-site-compra {

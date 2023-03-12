@@ -26,14 +26,29 @@
                 @if (count($produtos))
                     @foreach ($produtos as $produto)
                         <div class="{{ $produto['quantidade'] <= 0 ? 'each-produto-container0' : 'each-produto-container' }}">
-                            <div class="each-produto" id="produto-{{ $produto['id'] }}"
-                                onclick="opendiv('produto-{{ $produto['id'] }}','info-{{ $produto['id'] }}')">
+                            <div class="each-produto" id="produto1-{{ $produto['id'] }}"
+                                onclick="opendiv('produto1-{{ $produto['id'] }}','produto2-{{ $produto['id'] }}')">
                                 <div class="info">
                                     <div class="nome-produto">
                                         <p class="titulo nome">{{ $produto['nome'] }}</p>
                                     </div>
                                     <div class="image-container">
-                                        <img src="{{ $produto['imagem'] }}" alt="">
+                                        <img id="img1" src="{{ $produto['imagem'] }}" alt="">
+                                    </div>
+                                    <div class="info-produto">
+                                        <p>{{ $produto->categoria->categoria }}</p>
+                                        <p>R${{ $produto['preco'] }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="each-produto2" id="produto2-{{ $produto['id'] }}" style="display: none"
+                                onclick="opendiv('produto1-{{ $produto['id'] }}','produto2-{{ $produto['id'] }}')">
+                                <div class="info1">
+                                    <div class="nome-produto">
+                                        <p class="titulo nome">{{ $produto['nome'] }}</p>
+                                    </div>
+                                    <div class="image-container1">
+                                        <img id="img2" src="{{ $produto['imagem'] }}" alt="">
                                     </div>
                                     <div class="info-produto">
                                         <p>{{ $produto->categoria->categoria }}</p>
