@@ -6,16 +6,28 @@
 
 @section('conteudo')
     <div id="container-compra">
-        <div>{{ $produto['nome'] }}</div>{{-- {{ $produto['nome'] }} --}}
+        <div id="nome-compra">{{ $produto['nome'] }}</div>{{-- {{ $produto['nome'] }} --}}
         <div class="container-info">
             <div class="imagem-compra">
                 <img src="{{ $produto['imagem'] }}" alt="">{{-- {{ $produto['imagem'] }} --}}
             </div>
             <div class="info-site-compra">
-                <p>{{ $produto['descricao'] }}</p>{{-- {{ $produto['descricao'] }} --}}
-                <p>{{ $produto->categoria->categoria }}</p>{{-- {{ $produto->categoria->categoria }} --}}
-                <p>{{ $produto['quantidade'] }}</p>{{-- {{ $produto['quantidade'] }} --}}
-                <p>R${{ $produto['preco'] }}</p>{{-- R${{ $produto['preco'] }} --}}
+                <div>
+                    <p class="titulo-info">descrição</p>
+                    <p class="texto-info">{{ $produto['descricao'] }}</p>
+                </div>
+                <div>
+                    <p class="titulo-info">categoria</p>
+                    <p class="texto-info">{{ $produto->categoria->categoria }}</p>
+                </div>
+                <div>
+                    <p class="titulo-info">quantidade</p>
+                    <p class="texto-info">{{ $produto['quantidade'] }} unidades</p>
+                </div>
+                <div>
+                    <p class="titulo-info">preço</p>
+                    <p class="texto-info">R${{ $produto['preco'] }}</p>
+                </div>
             </div>
         </div>
         <div id="comprar">

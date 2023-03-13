@@ -25,7 +25,7 @@
             @isset($produtos)
                 @if (count($produtos))
                     @foreach ($produtos as $produto)
-                        <div class="{{ $produto['quantidade'] <= 0 ? 'each-produto-container0' : 'each-produto-container' }}">
+                        <div class="each-produto-container">
                             <div class="each-produto" id="produto1-{{ $produto['id'] }}"
                                 onclick="opendiv('produto1-{{ $produto['id'] }}','produto2-{{ $produto['id'] }}')">
                                 <div class="info">
@@ -80,3 +80,5 @@
         </div>
     </div>
 @endsection
+
+{{-- {{ $produto['quantidade'] <= 0 ? 'each-produto-container0' : 'each-produto-container' }} --}}
