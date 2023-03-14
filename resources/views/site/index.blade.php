@@ -78,7 +78,7 @@
                         </div>
                     @endforeach
                 @else
-                    <p><br><br><br><br><br><br>Sem produtos no momento<br><br><br><br><br><br><br><br><br><br></p>
+                    <p id="sem-produtos">Sem produtos no momento</p>
                 @endif
             @endisset
         </div>

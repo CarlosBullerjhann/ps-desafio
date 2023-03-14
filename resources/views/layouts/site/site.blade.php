@@ -20,6 +20,8 @@
 <body>
     @include('layouts.site.header')
 
+    @include('components.alerts')
+
     @yield('conteudo')
 
     @include('layouts.site.footer')
