@@ -30,14 +30,11 @@
                 </div>
             </div>
         </div>
-        <div id="comprar">
-            <p>valor total da compra</p>
-            <div id="quantidade-compra">
-                <button id="btn-1">-</button>
-                <input type="text">
-                <button id="btn-2">+</button>
-            </div>
-            <button class="btn-site-compra">comprar</button>
-        </div>
+        <form id="comprar" method="POST" action="{{ route('comprar', ['id' => $produto->id]) }}">
+            @csrf
+            <label for="quantidade">Quantidade:</label>
+            <input type="number" name="quantidade" id="quantidade" value="1">
+            <button type="submit">Comprar</button>
+        </form>
     </div>
 @endsection

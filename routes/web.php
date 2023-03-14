@@ -25,7 +25,7 @@ Route::get('siteIndex', [SiteController::class, 'index'])->name('siteIndex');
 Route::get('siteFilter', [SiteController::class, 'produtoFilter'])->name("siteFilter");
 Route::get('siteFind', [SiteController::class, 'produtoFind'])->name("siteFind");
 Route::get('compra/{id}', [SiteController::class, 'compra'])->name('compra');
-Route::post('/comprar/{id}', [ProdutoController::class, 'comprar'])->name('comprar');
+Route::post('comprar/{id}', [siteController::class, 'comprar'])->name('comprar');
 
 Route::middleware('locale')->group(function () {
 

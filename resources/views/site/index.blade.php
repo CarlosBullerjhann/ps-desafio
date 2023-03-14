@@ -26,7 +26,8 @@
                 @if (count($produtos))
                     @foreach ($produtos as $produto)
                         <div class="each-produto-container">
-                            <div class="each-produto" id="produto1-{{ $produto['id'] }}"
+                            <div class="{{ $produto['quantidade'] <= 0 ? 'each-produto0' : 'each-produto' }}"
+                                id="produto1-{{ $produto['id'] }}"
                                 onclick="opendiv('produto1-{{ $produto['id'] }}','produto2-{{ $produto['id'] }}')">
                                 <div class="info">
                                     <div class="nome-produto">
@@ -41,7 +42,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="each-produto2" id="produto2-{{ $produto['id'] }}" style="display: none"
+                            <div class="{{ $produto['quantidade'] <= 0 ? 'each-produto20' : 'each-produto2' }}"
+                                id="produto2-{{ $produto['id'] }}" style="display: none"
                                 onclick="opendiv('produto1-{{ $produto['id'] }}','produto2-{{ $produto['id'] }}')">
                                 <div class="info1">
                                     <div class="nome-produto">
@@ -56,29 +58,29 @@
                                     </div>
                                 </div>
                                 <div class="info-2" id="info-{{ $produto['id'] }}">
-                                    <div class="titulo">
-                                        <p>descrição</p>
+                                    <div>
+                                        <p class="titulo">descrição</p>
                                         <p id="descricao">{{ $produto['descricao'] }}</p>
                                     </div>
-                                    <div class="titulo">
-                                        <p>quantidade</p>
+                                    <div>
+                                        <p class="titulo">quantidade</p>
                                         <p id="quantidade">{{ $produto['quantidade'] }}</p>
                                     </div>
                                 </div>
                             </div>
-                            <a class="btn-compra" href="{{ route('compra', $produto->id) }}">
-                                <button class="btn-compra">
-                                    Compra
-                                </button>
-                            </a>
+                            @if ($produto['quantidade'] <= 0)
+                                <p id="esgotado">Esgotado</p>
+                            @else
+                                <a class="btn-compra" href="{{ route('compra', $produto->id) }}">
+                                    Comprar
+                                </a>
+                            @endif
                         </div>
                     @endforeach
                 @else
-                    <p>Sem produtos no momento</p>
+                    <p><br><br><br><br><br><br>Sem produtos no momento<br><br><br><br><br><br><br><br><br><br></p>
                 @endif
             @endisset
         </div>
     </div>
 @endsection
-
-{{-- {{ $produto['quantidade'] <= 0 ? 'each-produto-container0' : 'each-produto-container' }} --}}

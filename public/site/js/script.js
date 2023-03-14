@@ -17,3 +17,9 @@ function opendiv(produto1_id, produto2_id) {
         produto2.style.display = "none";
     }
 }
+
+const $html = document.querySelector("html");
+const $checkbox = document.querySelector("#switch");
+$checkbox.addEventListener("change", function () {
+    $html.classList.toggle("dark-mode");
+});
