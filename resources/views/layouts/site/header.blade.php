@@ -2,7 +2,7 @@
     <div id="header-logo">
         <a href="{{ route('siteIndex') }}">
             <img src="{{ asset('site/img/lampada.png') }}" alt="Logo Raio">
-            <p>Carlos Eletronica</p>
+            <p>Carlos Eletrônica</p>
         </a>
     </div>
     <div id="header-busca">
